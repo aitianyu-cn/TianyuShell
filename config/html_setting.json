@@ -1,4 +1,21 @@
 {
-    "title": "Tianyu-Shell",
-    "template": "./dty/core/home/index.html"
+    "autoClean": true,
+    "mineCss": {
+        "filename": "[name].[contenthash:6].css",
+        "chunkFilename": "[name].[contenthash:8].css"
+    },
+    "htmls": {
+        "index": {
+            "title": "Tianyu-Shell",
+            "template": "./dty/core/home/index.html",
+            "filename": "index.html",
+            "chunks": ["main"]
+        },
+        "error": {
+            "title": "Error",
+            "template": "./dty/core/error/error.html",
+            "filename": "error.html",
+            "chunks": ["error"]
+        }
+    }
 }

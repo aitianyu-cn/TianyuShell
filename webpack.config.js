@@ -12,9 +12,38 @@ const env = require("./config/env.json");
 const modules = require("./tools/webpack/modules");
 const devServer = require("./tools/webpack/devServer");
 
+const pluginsGenerator = function () {
+    const plugins = [];
+
+    if (htmlSetting.autoClean) plugins.push(new CleanWebpackPlugin());
+
+    const htmlDefs = htmlSetting.htmls;
+    if (htmlDefs) {
+        const htmls = Object.keys(htmlDefs);
+        for (const html of htmls) {
+            const htmlPlugin = new HtmlWebpackPlugin({
+                title: htmlDefs[html].title || html,
+                template: htmlDefs[html].template || "",
+                filename: htmlDefs[html].filename || `${html}.html`,
+                chunks: htmlDefs[html].chunks || [],
+            });
+
+            plugins.push(htmlPlugin);
+        }
+    }
+
+    const mineCss = htmlSetting.mineCss;
+    if (mineCss) {
+        plugins.push(new MineCssExtractPlugin(mineCss));
+    }
+
+    return plugins;
+};
+
 module.exports = {
     entry: {
         main: "./dty/core/home/index.ts",
+        error: "./dty/core/error/error.ts",
     },
     output: {
         path: path.resolve(__dirname, "/build"),
@@ -27,18 +56,7 @@ module.exports = {
     module: {
         rules: modules.rules,
     },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            title: htmlSetting.title,
-            template: htmlSetting.template,
-            chunks: ["main"],
-        }),
-        new MineCssExtractPlugin({
-            filename: "[name].[contenthash:6].css",
-            chunkFilename: "[name].[contenthash:8].css",
-        }),
-    ],
+    plugins: pluginsGenerator(),
     resolve: {
         extensions: [".ts", ".js", ".css", ".view.json", ".i18n.js"],
         alias: {
@@ -57,5 +75,9 @@ module.exports = {
     },
     devServer: {
         proxy: devServer.proxy,
+        historyApiFallback: devServer.historyApiFallback,
+        compress: env.mode !== "development",
+        hot: env.mode === "development",
+        static: devServer.static(__dirname),
     },
 };

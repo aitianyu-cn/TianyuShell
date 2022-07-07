@@ -31,7 +31,7 @@ interface IMsgRecords {
 }
 
 const MessageDefaultTimeout = 300000;
-const MessageTipDefaultTimeout = 10000;
+const MessageTipDefaultTimeout = 3500;
 
 export class MessageCenter {
     private static oMsgCenter: MessageCenter | null = null;

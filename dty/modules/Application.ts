@@ -1,6 +1,5 @@
 /**@format */
 
-import { getCurrentThemeName } from "dty-core/common/ThemeCenter";
 import { Console } from "dty-core/common/Console";
 import { TianyuDOM } from "./global/TianyuDOM";
 import { Background } from "./layer/Background";
@@ -19,14 +18,9 @@ export class Application {
         const dialogLayer = new DialogLayer();
         const msgLayer = new MessageLayer();
 
-        const oBasicDiv = document.createElement("div");
-        oBasicDiv.classList.add(`${getCurrentThemeName()}_application_main_def_main`);
-
-        TianyuDOM.render(background, oBasicDiv);
-        TianyuDOM.render(dialogLayer, oBasicDiv);
-        TianyuDOM.render(msgLayer, oBasicDiv);
-
-        TianyuDOM.renderDom(oBasicDiv, "root");
+        TianyuDOM.render(background, "root");
+        TianyuDOM.render(dialogLayer, "root");
+        TianyuDOM.render(msgLayer, "root");
 
         return this.initApp();
     }
@@ -37,7 +31,14 @@ export class Application {
             import("application/App").then(
                 (StartModules) => {
                     StartModules.beforeLoad();
-                    // StartModules.Apps
+
+                    const app = new StartModules.Apps();
+
+                    const oBasicDiv = document.createElement("div");
+                    oBasicDiv.className = "global_body_index none_user_select text_setting_wrap";
+                    TianyuDOM.render(app, oBasicDiv);
+                    TianyuDOM.renderDom(oBasicDiv, "root");
+
                     StartModules.onLoaded();
 
                     resolve();
