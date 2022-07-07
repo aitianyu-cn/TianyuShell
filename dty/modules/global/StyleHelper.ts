@@ -1,6 +1,6 @@
 /**@format */
 
-import { getCurrentThemeName } from "../../ThemeCenter";
+import { getCurrentThemeName } from "dty-core/common/ThemeCenter";
 
 export interface IThemes {
     background?: string;

@@ -1,6 +1,6 @@
 /**@format */
 
-import { IShellProperty } from "dty/model/IShell";
+import { IShellProperty } from "dty-core/model/IShell";
 import { Tianyu as TianyuNS } from "./Component";
 
 export namespace Tianyu {

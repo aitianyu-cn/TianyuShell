@@ -1,8 +1,8 @@
 /**@format */
 
-import { IShellProperty } from "dty/model/IShell";
-import { TYStyle } from "../global/StyleHelper";
-import { Tianyu } from "../global/ViewComponent";
+import { TYStyle } from "dty-core/modules/global/StyleHelper";
+import { IShellProperty } from "dty-core/model/IShell";
+import { Tianyu } from "dty-core/modules/global/ViewComponent";
 
 import "./css/message.css";
 

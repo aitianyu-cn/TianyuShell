@@ -1,8 +1,8 @@
 /**@format */
 
-import { MessageTip } from "./MessageTip";
+import { MessageTip } from "dty-core/modules/components/MessageTip";
 
-import "./msg.tip.css";
+import "dty-core/modules/components/msg.tip.css";
 
 /**
  * message type

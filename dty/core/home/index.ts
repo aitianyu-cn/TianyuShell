@@ -1,6 +1,6 @@
 /**@format */
 
-import { loadApplication } from "../scripts/Loader";
+import { loadApplication } from "dty-core/core/scripts/Loader";
 
 import "./index.less";
 

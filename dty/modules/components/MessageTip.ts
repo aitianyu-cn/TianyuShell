@@ -1,11 +1,11 @@
 /**@format */
 
-import { IShellProperty } from "dty/model/IShell";
-import { Tianyu } from "../modules/global/ViewComponent";
-import { TYStyle } from "../modules/global/StyleHelper";
-import { MessageCenter, MessageType } from "./MessageCenter";
+import { IShellProperty } from "dty-core/model/IShell";
+import { Tianyu } from "dty-core/modules/global/ViewComponent";
+import { TYStyle } from "dty-core/modules/global/StyleHelper";
+import { MessageCenter, MessageType } from "dty-core/common/MessageCenter";
 
-const MessageBundle = require("/dty/tools/MessageBundle").MessageBundle;
+const MessageBundle = require("dty-core/common/MessageBundle").MessageBundle;
 
 const MessageTipDefaultType = 2;
 

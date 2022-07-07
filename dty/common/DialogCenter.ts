@@ -1,6 +1,6 @@
 /**@format */
 
-import { TianyuDOM } from "../modules/global/TianyuDOM";
+import { TianyuDOM } from "dty-core/modules/global/TianyuDOM";
 
 export class DialogCenter {
     private static oDialogCenter: DialogCenter | null;

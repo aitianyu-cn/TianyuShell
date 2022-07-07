@@ -1,6 +1,6 @@
 /**@format */
 
-import { Console } from "../../core/Console";
+import { Console } from "dty-core/common/Console";
 import { Tianyu as TianyuNS } from "./ViewComponent";
 
 export class TianyuDOM {

@@ -1,9 +1,9 @@
 /**@format */
 
-import { Console } from "../Console";
+import { Console } from "dty-core/common/Console";
 
 export function loadApplication(): void {
-    import("/dty/modules/Application" as any).then(
+    import("dty-core/modules/Application" as any).then(
         ({ Application }) => {
             const application = new Application();
             application.buildApp();

@@ -16,15 +16,14 @@ export function getAreaFromString(areaString?: string): AreaCode {
 }
 
 export function getLocationArea(): AreaCode {
-    const sLocalArea = navigator.language;
+    const sLocalArea = formatedLocationArea();
 
     return getAreaFromString(sLocalArea);
 }
 
 export function formatedLocationArea(): string {
-    const sLocalArea = navigator.language;
+    const cookieArea = window.localStorage.getItem("language");
+    const sLocalArea = cookieArea || navigator.language.replace("-", "_");
 
-    const formated = sLocalArea.replace("-", "_");
-
-    return formated;
+    return sLocalArea;
 }

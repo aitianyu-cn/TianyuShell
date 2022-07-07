@@ -1,9 +1,16 @@
 /**@format */
 
-import { MessageCenter } from "../dty/common/MessageCenter";
-import { DialogCenter } from "../dty/common/DialogCenter";
+import { MessageCenter } from "dty-core/common/MessageCenter";
+import { DialogCenter } from "dty-core/common/DialogCenter";
+import { MessageBundle } from "dty-core/common/MessageBundle";
 
-export function testF(): void {
+import { Tianyu } from "dty-core/common/TianyuUI";
+
+// import "./test.view.json";
+
+export const Apps = {};
+
+export function beforeLoad(): void {
     const dialogCenter = DialogCenter.dialogCenter();
 
     const oDiv = document.createElement("div");
@@ -26,4 +33,11 @@ export function testF(): void {
     setTimeout(() => {
         messageCenter.popMessage("当前消息弹出框：错误！！", 0);
     }, 2000);
+
+    const message = MessageBundle.getI18n("t1", "test", "::", 4, 6, -2, 10);
+    console.log(message);
+}
+
+export function onLoaded(): void {
+    //
 }

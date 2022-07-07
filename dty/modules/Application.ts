@@ -1,18 +1,20 @@
 /**@format */
 
-import { getCurrentThemeName } from "../ThemeCenter";
-import { Console } from "../core/Console";
+import { getCurrentThemeName } from "dty-core/common/ThemeCenter";
+import { Console } from "dty-core/common/Console";
 import { TianyuDOM } from "./global/TianyuDOM";
 import { Background } from "./layer/Background";
 import { DialogLayer } from "./layer/DialogLayer";
 import { MessageLayer } from "./layer/MessageLayer";
+import { loadMessageSource } from "dty-core/common/MessageBundle";
+import { PromiseReject, PromiseResolve } from "dty-core/model/Types";
 
 export class Application {
     public constructor() {
         //
     }
 
-    public buildApp(): void {
+    public async buildApp(): Promise<void> {
         const background = new Background();
         const dialogLayer = new DialogLayer();
         const msgLayer = new MessageLayer();
@@ -26,31 +28,28 @@ export class Application {
 
         TianyuDOM.renderDom(oBasicDiv, "root");
 
-        this.initApp();
+        return this.initApp();
     }
 
-    private initApp(): void {
-        import("../../config/start").then((StartModules) => {
-            this.startApp(StartModules);
+    private async initApp(): Promise<void> {
+        const defaultI18nPromise = loadMessageSource("default");
+        const appBuildPromise = new Promise<void>((resolve: PromiseResolve<void>, reject: PromiseReject) => {
+            import("application/App").then(
+                (StartModules) => {
+                    StartModules.beforeLoad();
+                    // StartModules.Apps
+                    StartModules.onLoaded();
+
+                    resolve();
+                },
+                (reason?: string) => {
+                    Console.warn("Application", `Currect app is empty - ${reason}`);
+
+                    reject();
+                },
+            );
         });
-    }
 
-    private startApp(modules: any): void {
-        if (!modules.statues) {
-            return;
-        }
-
-        if (!modules.start) {
-            Console.warn("Application", "Appliction starting done with empty.");
-            return;
-        }
-
-        const start = modules.start;
-        if (!start.entry) {
-            Console.warn("Application", "Application can't find entry point.");
-            return;
-        }
-
-        start.entry();
+        return Promise.all([defaultI18nPromise, appBuildPromise]).then();
     }
 }
