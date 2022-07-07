@@ -1,1 +1,107 @@
-@global-bg-color: #030303;
+@global-bg-color-default: #030303;
+@dialog-bg-color-default: #80808099;
+
+/* global background color */
+.default_bg_global {
+  background-color: #eeeeee;
+}
+
+.default_bg_dialog {
+  background-color: #80808099;
+}
+
+/* message tip background color */
+
+.default_msg_tip_err_bg {
+  background-color: #c95656;
+  color: #eeeeee;
+}
+
+.default_msg_tip_warn_bg {
+  background-color: #e1b609;
+  color: #fff;
+}
+
+.default_msg_tip_info_bg {
+  background-color: #1fa2ff;
+  color: #fff;
+}
+
+.default_msg_tip_bg {
+  background-color: #56c676;
+  color: #eeeeee;
+}
+
+/* message tip front color */
+
+.default_msg_tip_err_fg {
+  background-color: #c95656;
+  color: #eeeeee;
+}
+
+.default_msg_tip_warn_fg {
+  background-color: #e1b609;
+  color: #fff;
+}
+
+.default_msg_tip_info_fg {
+  background-color: #1fa2ff;
+  color: #fff;
+}
+
+.default_msg_tip_fg {
+  background-color: #56c676;
+  color: #eeeeee;
+}
+
+.default_msg_tip_link {
+  color: #eeeeee;
+}
+
+.default_msg_tip_err_fg:hover {
+  animation: default_msg_tip_err_fg_hov 0.25s forwards;
+}
+@keyframes default_msg_tip_err_fg_hov {
+  0% {
+    background-color: #c95656;
+  }
+  100% {
+    background-color: #6f3636;
+  }
+}
+
+.default_msg_tip_warn_fg:hover {
+  animation: default_msg_tip_warn_fg_hov 0.25s forwards;
+}
+@keyframes default_msg_tip_warn_fg_hov {
+  0% {
+    background-color: #e1b609;
+  }
+  100% {
+    background-color: #604d03;
+  }
+}
+
+.default_msg_tip_info_fg:hover {
+  animation: default_msg_tip_info_fg_hov 0.25s forwards;
+}
+@keyframes default_msg_tip_info_fg_hov {
+  0% {
+    background-color: #1fa2ff;
+  }
+  100% {
+    background-color: #092e47;
+  }
+}
+
+.default_msg_tip_link:hover {
+  animation: default_msg_tip_link_hover 0.25s forwards;
+}
+@keyframes default_msg_tip_link_hover {
+  0% {
+    color: #eeeeee;
+  }
+  100% {
+    color: #cccccc;
+  }
+}

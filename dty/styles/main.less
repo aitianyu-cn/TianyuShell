@@ -2,3 +2,41 @@
 @global-height: 100vh;
 
 @import url("./theme/theme.less");
+
+body {
+  margin: 0;
+}
+
+.global_total_size {
+  width: 100vw;
+  height: 100vh;
+
+  display: block;
+  position: fixed;
+}
+
+.global_bg_index {
+  z-index: -1;
+}
+
+.global_body_index {
+  z-index: 10;
+}
+
+.global_message_index {
+  z-index: 100;
+}
+
+.global_dialog_index {
+  z-index: 999;
+}
+
+.none_user_select {
+  user-select: none;
+}
+
+.text_setting_wrap {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}

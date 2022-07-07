@@ -1,5 +1,5 @@
 {
-    "include": ["dty"],
+    "include": ["config", "dty", "i18n", "app"],
     "compilerOptions": {
         "composite": true,
         "target": "es2021",

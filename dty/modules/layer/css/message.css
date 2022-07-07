@@ -1,0 +1,26 @@
+.global_msg_additional {
+  /* set for additional properties */
+  display: block;
+}
+
+.msg_container {
+  position: fixed;
+  z-index: 200;
+  vertical-align: bottom;
+
+  width: 600px;
+  height: max-content;
+
+  left: calc(50% - 300px);
+  bottom: 20px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .msg_container {
+    width: 400px;
+    left: calc(50% - 200px);
+  }
+}

@@ -1,0 +1,44 @@
+.msg_tip_area {
+  width: 100%;
+  height: max-content;
+
+  margin-bottom: 10px;
+}
+
+.msg_tip_base {
+  border-radius: 10px;
+
+  padding: 5px;
+}
+
+.msg_tip_close_button {
+  width: 30px;
+  height: max-content;
+
+  font-size: 25px;
+
+  text-align: center;
+  justify-content: center;
+
+  border-radius: 5px;
+
+  padding: 0px;
+
+  float: left;
+}
+
+.msg_tip_text {
+  display: flex;
+  padding-left: 5px;
+
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+.msg_tip_link {
+  margin-left: 35px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  text-decoration: underline;
+}

@@ -2,9 +2,9 @@
     "name": "tianyu-shell",
     "version": "1.0.0",
     "description": "tianyu for web-framework",
-    "main": "\\",
+    "main": "",
     "scripts": {
-        "start": "webpack server --open",
+        "start": "webpack server",
         "build": "webpack",
         "test": "echo \"Error: no test specified\" && exit 1"
     },

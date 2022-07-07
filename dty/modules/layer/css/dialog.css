@@ -1,0 +1,51 @@
+.dialog_base {
+  visibility: hidden;
+
+  animation: dialog_base_in 1s forwards;
+}
+
+.dialog_content {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns: auto max-content auto;
+  grid-template-rows: auto max-content auto;
+}
+
+.dialog_area {
+  grid-row: 2;
+  grid-column: 2;
+
+  width: max-content;
+  height: max-content;
+  max-width: 80vw;
+  max-height: 80vh;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 0px 20px #535353;
+
+  animation: dialog_area_in 1s forwards;
+}
+
+@keyframes dialog_base_in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes dialog_area_in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}

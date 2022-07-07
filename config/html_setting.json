@@ -1,4 +1,4 @@
 {
     "title": "Tianyu-Shell",
-    "template": "./dty/core/index.html"
+    "template": "./dty/core/home/index.html"
 }

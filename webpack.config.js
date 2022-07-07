@@ -9,7 +9,7 @@ const env = require("./config/env.json");
 
 module.exports = {
     entry: {
-        main: "./dty/core/index.ts"
+        main: "./dty/core/home/index.ts"
     },
     output: {
         path: path.resolve(__dirname, "/build"),
@@ -50,6 +50,14 @@ module.exports = {
                     'css-loader',
                     'less-loader'
                 ]    
+            },
+            {
+                test:/\.css$/i,
+                exclude:/(node_modules|bower_components)/,
+                use: [
+                    MineCssExtractPlugin.loader,
+                    'css-loader'
+                ]    
             }
         ],
     },
@@ -70,7 +78,10 @@ module.exports = {
         )
     ],
     resolve: {
-        extensions: [".ts", ".js"]
+        extensions: [".ts", ".js", ".css"],
+        alias: {
+            "@": "node_modules"
+        }
     },
     mode: env.mode,
     devtool: "source-map",

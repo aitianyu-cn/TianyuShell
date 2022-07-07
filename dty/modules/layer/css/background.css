@@ -1,0 +1,6 @@
+.global_bg_additional {
+  /* set for additional properties */
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
