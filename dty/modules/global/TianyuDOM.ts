@@ -1,6 +1,8 @@
 /**@format */
 
 import { Console } from "dty-core/common/Console";
+import { viewLoader } from "dty-core/core/scripts/ViewLoader";
+import { ITianyuView } from "dty-core/model/ViewModes";
 import { Tianyu as TianyuNS } from "./ViewComponent";
 
 export class TianyuDOM {
@@ -24,5 +26,9 @@ export class TianyuDOM {
         }
 
         rootElement.appendChild(dom);
+    }
+
+    public static createDOM(source: ITianyuView[]): HTMLElement[] {
+        return viewLoader(source);
     }
 }

@@ -9,7 +9,7 @@ module.exports.proxy = proxyData;
 module.exports.historyApiFallback = {
     rewrites: [
         { from: /^\/$/, to: "/index.html" },
-        { form: /./, to: "/error.html" },
+        { form: /./, to: "/error.html#404" },
     ],
 };
 

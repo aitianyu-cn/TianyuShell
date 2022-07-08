@@ -13,7 +13,9 @@ export namespace Tianyu {
         }
 
         public render(): HTMLElement {
-            return document.createElement("div");
+            const viewBaseDiv = document.createElement("div");
+            viewBaseDiv.innerText = "Hello World!";
+            return viewBaseDiv;
         }
 
         public componentLoaded(): void {

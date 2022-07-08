@@ -22,9 +22,6 @@ class MessageBundleInternal implements IMessageBundle {
         this._MessageSrc = {
             default: {},
         };
-        // this._MessageSrc["test"] = {
-        //     t1: "测试数据: {1}-{2}={3} {0} {1}+{2}={4}",
-        // };
     }
 
     public getText(key: string, src: string): string | null {
