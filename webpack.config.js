@@ -46,7 +46,7 @@ module.exports = {
         error: "./dty/core/error/error.ts",
     },
     output: {
-        path: path.resolve(__dirname, "/build"),
+        path: path.join(__dirname, "/build"),
         filename: "[name].chunks.[contenthash:6].js",
         chunkFilename: "[name].chunks.[contenthash:8].js",
         environment: {
@@ -67,7 +67,7 @@ module.exports = {
         },
     },
     mode: env.mode,
-    devtool: "source-map",
+    devtool: env.mode === "development" ? "source-map" : false,
     watchOptions: {
         poll: 1000,
         aggregateTimeout: 1000,
