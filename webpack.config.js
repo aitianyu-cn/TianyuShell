@@ -73,11 +73,5 @@ module.exports = {
         aggregateTimeout: 1000,
         ignored: /node_modules/,
     },
-    devServer: {
-        proxy: devServer.proxy,
-        historyApiFallback: devServer.historyApiFallback,
-        compress: env.mode !== "development",
-        hot: env.mode === "development",
-        static: devServer.static(__dirname),
-    },
+    devServer: devServer.generator({ dir: __dirname, port: 3000 }),
 };
