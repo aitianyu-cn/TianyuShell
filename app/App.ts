@@ -1,9 +1,9 @@
 /**@format */
 
-import { DialogCenter } from "dty-core/common/DialogCenter";
 import { Tianyu, TianyuDOM } from "dty-core/common/TianyuUI";
 import { IShellProperty } from "dty-core/model/IShell";
-import { ITianyuView } from "dty-core/model/ViewModes";
+
+const route = require("./route.json");
 
 export class Apps extends Tianyu.UIViewComponent {
     public constructor(props?: IShellProperty) {
